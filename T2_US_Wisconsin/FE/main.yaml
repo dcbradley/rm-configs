@@ -2,28 +2,62 @@
 general:
   logLevel: DEBUG
   sitename: T2_US_Wisconsin
-  webdomain: "https://<yet to be added>443"
+  webdomain: "https://sense-rm.hep.wisc.edu:10443"
   probes:
     - https_v4_siterm_2xx
     - icmp_v4
 T2_US_Wisconsin:
-  domain: <yet to be added> 
-  latitude: <yet to be added>
-  longitude: <yet to be added>
+  domain: hep.wisc.edu
+  latitude: 43.073051
+  longitude: -89.401230
   plugin: ansible
   ipv6-subnet-pool:
-    - 2607:f388:101c:1010/60
+      - 2607:f388:101c:1010::/64
+      - 2607:f388:101c:1011::/64
+      - 2607:f388:101c:1012::/64
+      - 2607:f388:101c:1013::/64
+      - 2607:f388:101c:1014::/64
+      - 2607:f388:101c:1015::/64
+      - 2607:f388:101c:1016::/64
+      - 2607:f388:101c:1017::/64
+      - 2607:f388:101c:1018::/64
+      - 2607:f388:101c:1019::/64
   metadata:
     xrootd:
-      2607:f388:101c:1010/60: <yet to be added>
-  year: 2024
+      2607:f388:101c:1010::/64: sense-xrootd-0.hep.wisc.edu:8443
+      2607:f388:101c:1011::/64: sense-xrootd-1.hep.wisc.edu:8443
+      2607:f388:101c:1012::/64: sense-xrootd-2.hep.wisc.edu:8443
+      2607:f388:101c:1013::/64: sense-xrootd-3.hep.wisc.edu:8443
+      2607:f388:101c:1014::/64: sense-xrootd-4.hep.wisc.edu:8443
+      2607:f388:101c:1015::/64: sense-xrootd-5.hep.wisc.edu:8443
+      2607:f388:101c:1016::/64: sense-xrootd-6.hep.wisc.edu:8443
+      2607:f388:101c:1017::/64: sense-xrootd-7.hep.wisc.edu:8443
+      2607:f388:101c:1018::/64: sense-xrootd-8.hep.wisc.edu:8443
+      2607:f388:101c:1019::/64: sense-xrootd-9.hep.wisc.edu:8443
+  year: 2026
   switch:
     - cisconx_s0
 cisconx_s0:
   rsts_enabled: ipv4,ipv6
   private_asn: <yet to be added>
   vrf: <yet to be added>
-  vlan_mtu: <yet to be added>
+  vlan_mtu: 9000
   ports:
-  vlan_range:
+    Ethernet 1/1/1: {}
+    Ethernet 1/1/2: {}
+    Ethernet 1/1/3: {}
+    Ethernet 1/1/4: {}
+    Ethernet 1/1/5: {}
+    Ethernet 1/1/6: {}
+    Ethernet 1/1/7: {}
+    Ethernet 1/1/8: {}
+    Ethernet 1/1/9: {}
+    Ethernet 1/1/10: {}
+    Ethernet 1/1/11: {}
+    Ethernet 1/1/12: {}
+    Ethernet 1/1/13: {}
+    Ethernet 1/1/14: {}
+    Ethernet 1/1/15: {}
+    Ethernet 1/1/16: {}
+  vlan_range: 925-934
   allports: false

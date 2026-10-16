@@ -1,22 +1,32 @@
 ---
 general:
-  ip: "<ip of the host>"
+  ip: "144.92.181.60"
   sitename: T2_US_Wisconsin
-  webdomain: "<FE URL>"
-  node_exporter: "<hostname>:9100"
+  webdomain: "https://sense-rm.hep.wisc.edu:10443"
+  node_exporter: "cmsdtn06.hep.wisc.edu:9100"
 agent:
-  interfaces: <yet to be added>
-  hostname: <hostname>
-<interafce name>:
-  port: "<port connected to the switch>"
+  interfaces: [bond0]
+  hostname: cmsdtn06.hep.wisc.edu
+bond0:
+  port: "Ethernet 1/1/11"
   switch: cisconx_s0
   shared: false
-  intf_max: 
-  vlan_range: []
+  intf_max: 50000
+  vlan_range: [925-934]
 qos:
   policy: hostlevel
   qos_params: "mtu 9000 mpu 9000 quantum 200000 burst 300000 cburst 300000 qdisc sfq balanced"
   interfaces:
-    <interafce name>:
-      master_intf: <interafce name>
+    bond0:
+      master_intf: bond0
       ipv6_range:
+      - 2607:f388:101c:1010::/64
+      - 2607:f388:101c:1011::/64
+      - 2607:f388:101c:1012::/64
+      - 2607:f388:101c:1013::/64
+      - 2607:f388:101c:1014::/64
+      - 2607:f388:101c:1015::/64
+      - 2607:f388:101c:1016::/64
+      - 2607:f388:101c:1017::/64
+      - 2607:f388:101c:1018::/64
+      - 2607:f388:101c:1019::/64
