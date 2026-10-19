@@ -39,9 +39,8 @@ T2_US_Wisconsin:
     - cisconx_s0
 cisconx_s0:
   rsts_enabled: ipv4,ipv6
-  private_asn: <yet to be added>
-  vrf: <yet to be added>
-  vlan_mtu: 9000
+  private_asn: 59
+  vlan_mtu: 9216
   ports:
     Ethernet 1/1/1: {}
     Ethernet 1/1/2: {}
@@ -59,5 +58,9 @@ cisconx_s0:
     Ethernet 1/1/14: {}
     Ethernet 1/1/15: {}
     Ethernet 1/1/16: {}
+    Port-channel 1:
+      capacity: 200000
+      desttype: switch
+      wanlink: true
   vlan_range: 925-934
   allports: false
